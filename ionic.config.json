@@ -1,0 +1,7 @@
+{
+  "name": "token-generate",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
