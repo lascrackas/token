@@ -1,20 +1,42 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-icon (click)="return()" name="chevron-back-outline"></ion-icon>
+    <ion-title>Ajouter une carte</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <form style="margin-top: 50px;" class="mt-24" id="payment-form">
+    <div class="p-4 mx-2 bg-gray-100" id="card-element"></div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <div id="card-errors" role="alert"></div>
+  </form>
+ 
+
+  <p class="flex items-center justify-center mt-12">
+    <button
+      [ngClass]="{'bg-black':cardComplete, 'bg-gray-300':!cardComplete}"
+      [disabled]="!cardComplete"
+      class="p-4 w-4/5 rounded-md mx-auto text-white"
+      (click)="createToken()"
+    >
+      ajouter carte
+    </button>
+  </p>
+
+
+  <div style="margin-top: 50px;" class="flex  items-center justify-center space-x-6">
+    <input class="w-full" [(ngModel)]="email" placeholder="email" />
+    <input class="w-full" [(ngModel)]="address" placeholder="addresse" />
+    <input class="w-full" [(ngModel)]="city" placeholder="ville" />
+    <input class="w-full" [(ngModel)]="postal_code" placeholder="code postal" />
+    <input class="w-full" [(ngModel)]="name" placeholder="nom" />
+    <input class="w-full" [(ngModel)]="country" placeholder="pays" />
+
+      <button (click)="test()">test</button>
   </div>
+
+
+  <p (click)="pay()">ppppp
+  </p>
 </ion-content>
